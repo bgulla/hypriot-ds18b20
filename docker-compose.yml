@@ -1,9 +1,8 @@
 restsensors:
   build: .
   ports: 
-    - "8000:8000"
+    - "8001:8000"
   volumes:
-    - "./app:/src/app:rw"
-    - "/sys/bus/w1/devices:/sensors"
+    - "/sys/bus/w1/devices:/sys/bus/w1/devices"
   devices:
     - "/dev/mem:/dev/mem"

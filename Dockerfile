@@ -1,5 +1,29 @@
-FROM hypriot/wiringpi
+#FROM hypriot/wiringpi
+
+FROM resin/rpi-raspbian:jessie
+MAINTAINER Govinda Fichtner <govinda@hypriot.com>
+
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    python \
+    python-dev \
+    python-setuptools \
+    python-virtualenv \
+    --no-install-recommends && \
+    rm -rf /var/lib/apt/lists/*
+
 
 RUN easy_install Flask
 RUN easy_install mimerender
+
+EXPOSE 8080
+
+ADD ./bin/ds18b20.py /
+ADD ./bin/restserver.py /
+RUN chmod +x /restserver.py
+
+CMD ["/restserver.py"]
+
+
+
 

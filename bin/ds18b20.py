@@ -6,18 +6,26 @@ import time
  
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
- 
+
+
+def getAliasForSensor(sensor_id):
+    if sensor_id in os.environ:
+        return os.environ.get(sensor_id)
+    else:
+        return sensor_id
+  
 def get_sensor_ids():
     base_dir = '/sys/bus/w1/devices/'
     NUM_SENSORS = len(glob.glob(base_dir + '28*'))
     sensor_ids=[]
     for x in range(0,NUM_SENSORS):
         device_folder = glob.glob(base_dir + '28*')[x]
-        sensor_ids.append(device_folder.replace("/sys/bus/w1/devices/",''))
+        id = device_folder.replace("/sys/bus/w1/devices/",'')
+        sensor_ids.append(id)
     return sensor_ids
 
-print get_sensor_ids()
- 
+#print get_sensor_ids()
+
 def read_temp_raw(sensor_id):
     base_dir = '/sys/bus/w1/devices/'
     device_folder = glob.glob(base_dir + sensor_id)[0]
@@ -55,7 +63,8 @@ def get_readings():
     for sensor in SENSOR_IDS:
         if sensor is not None:
             temp = read_temp(sensor)
-            sensors_values[str(sensor)] = str(temp)
+            sensor_id = getAliasForSensor(sensor_id)
+            sensors_values[sensor_id] = str(temp)
     return sensors_values
 	
 
