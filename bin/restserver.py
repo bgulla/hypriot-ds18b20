@@ -41,14 +41,12 @@ def index():
 
 def getTemperatureJSON():
   temperature_dict = ds18b20.get_readings()
-  return json.dumps(temperature_dict, ensure_ascii=False)
+  return temperature_dict
 
 def getTemp():
-  #print('Temperature: ' + str(temp))
-  print getTemperatureJSON()
-  return {'rtn': str(currentTemperature)}
-    #return{temp}
-
+  tjson =  getTemperatureJSON()
+  currentTemperature = "100.5"
+  return {'rtn': tjson}
 
 if __name__ == "__main__":
   app.debug = True
