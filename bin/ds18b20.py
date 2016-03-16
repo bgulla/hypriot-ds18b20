@@ -56,7 +56,7 @@ def get_readings():
         if sensor is not None:
             temp = read_temp(sensor)
             sensors_values[str(sensor)] = str(temp)
-    print sensors_values
+    return sensors_values
 	
 
 if __name__ == "__main__":

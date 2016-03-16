@@ -41,14 +41,15 @@ def index():
 
 def getTemperatureJSON():
   temperature_dict = ds18b20.get_readings()
+  return json.dumps(temperature_dict, ensure_ascii=False)
 
 def getTemp():
   #print('Temperature: ' + str(temp))
-  return{'rtn': str(currentTemperature)}
+  print getTemperatureJSON()
+  return {'rtn': str(currentTemperature)}
     #return{temp}
 
 
 if __name__ == "__main__":
   app.debug = True
   app.run(host='0.0.0.0', port=8080)
-  ipcon.disconnect()
