@@ -6,3 +6,5 @@ restsensors:
     - "/sys/bus/w1/devices:/sys/bus/w1/devices"
   devices:
     - "/dev/mem:/dev/mem"
+  environment: # used for sensor aliases
+    - sensor_00000483ba1a=chiller
