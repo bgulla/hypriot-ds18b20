@@ -8,7 +8,7 @@ import ds18b20
 mimerender = mimerender.FlaskMimeRender()
 
 render_json = lambda **args: json.dumps(args)
-render_html = lambda rtn: '<html><body><p>Current Temperature in Bochum, Germany: <strong>%s</strong></p></body></html>'%rtn
+render_html = lambda rtn: '<html><body><p>You Should Use JSON %s</p></body></html>'%rtn
 render_txt = lambda rtn: rtn
 
 app = Flask(__name__)
