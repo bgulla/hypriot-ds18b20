@@ -15,8 +15,11 @@ The container binds to a provided port and outputs the sensor data in easy to in
 
 
 `echo 'dtoverlay=w1-gpio' >> /boot/config.txt`
+
 `echo 'w1-gpio' >> /etc/modules`
+
 `echo 'w1-therm' >> /etc/modules`
+
 `reboot`
 
 
