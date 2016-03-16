@@ -1,7 +1,5 @@
-#FROM hypriot/wiringpi
-
 FROM resin/rpi-raspbian:jessie
-MAINTAINER Govinda Fichtner <govinda@hypriot.com>
+MAINTAINER Brandon Gulla <im@brandongulla.com>
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
