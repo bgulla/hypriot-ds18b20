@@ -30,7 +30,7 @@ Building the image is straight forward:
 * `docker build -t hypriot-ds18b20`
 * or `docker-compose up`
 
-# Aliases
+## Aliases
 Sensor IDs don't tell a story, but aliases do. All DS18b20 sensors have an id in the format `28-<sensor_id>`. If you attach environment variables prepended with 'sensor_', the webserver will actually replace the sensor id with a string value.
 
 Example:
