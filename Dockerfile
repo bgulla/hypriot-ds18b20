@@ -17,10 +17,10 @@ RUN easy_install mimerender
 EXPOSE 8080
 
 ADD ./bin/ds18b20.py /
-ADD ./bin/restserver.py /
-RUN chmod +x /restserver.py
+ADD ./bin/app.py /
+RUN chmod +x /app.py
 
-CMD ["/restserver.py"]
+CMD ["/app.py"]
 
 
 

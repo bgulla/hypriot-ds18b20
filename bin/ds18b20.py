@@ -9,6 +9,7 @@ os.system('modprobe w1-therm')
 
 
 def getAliasForSensor(sensor_id):
+    return sensor_id
     if sensor_id in os.environ:
         alias_id = "sensor_" + sensor_id.replace('28-','')
         return os.environ.get(alias_id)
