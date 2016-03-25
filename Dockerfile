@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN easy_install Flask
 RUN easy_install mimerender
-
+RUN easy_install flask-cors
 EXPOSE 8080
 
 ADD ./bin/ds18b20.py /
