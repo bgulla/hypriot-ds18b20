@@ -1,3 +1,5 @@
+**Deprecated: Code has been folded into the [sensor2json](https://github.com/bgulla/sensor2json) project.**
+
 # DS18B20 Temperature Sensor + Docker + REST
 
 This repo builds an ARM compatible Docker image that will output the values of DS18B20 sensors connected to a Raspberry Pi.
