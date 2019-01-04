@@ -36,4 +36,9 @@ Building the image is straight forward:
 Sensor IDs don't tell a story, but aliases do. All DS18b20 sensors have an id in the format `28-<sensor_id>`. If you attach environment variables prepended with 'sensor_', the webserver will actually replace the sensor id with a string value.
 
 Example:
-`docker run -t -p 8080:8080 -v "/sys/bus/w1/devices:/sys/bus/w1/devices" -e 'sensor_00000483ba1a=chiller' containername`
+```bash
+docker run -t -p 8080:8080 \
+    -v "/sys/bus/w1/devices:/sys/bus/w1/devices" \
+    -e 'sensor_00000483ba1a=chiller' \
+    bgulla/hypriot-ds18b20
+```
