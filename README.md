@@ -17,14 +17,11 @@ The container binds to a provided port and outputs the sensor data in easy to in
 ## Prerequesites
 [Adafruit has an awesome guide](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-11-ds18b20-temperature-sensing/ds18b20) but in short do the following commands:
 
-
-`echo 'dtoverlay=w1-gpio' >> /boot/config.txt`
-
-`echo 'w1-gpio' >> /etc/modules`
-
-`echo 'w1-therm' >> /etc/modules`
-
-`reboot`
+```bash
+echo 'dtoverlay=w1-gpio' >> /boot/config.txt
+echo 'w1-gpio' >> /etc/modules
+echo 'w1-therm' >> /etc/modules
+reboot```
 
 
 ## How to build
