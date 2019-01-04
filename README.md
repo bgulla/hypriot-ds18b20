@@ -7,7 +7,11 @@ The container binds to a provided port and outputs the sensor data in easy to in
 
 `curl http://hypriothost:8080/rest/v1.0/temperature/`
 ```json
-{"28-00000483ba1a": "62.9366", "28-00000471c98d": "64.2866", "28-00000677f123": "48.7616"}
+{
+  "28-00000483ba1a": "62.9366",
+  "28-00000471c98d": "64.2866",
+  "28-00000677f123": "48.7616"
+}
 ```
 
 ## Prerequesites
